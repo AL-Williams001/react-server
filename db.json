@@ -13,26 +13,31 @@
     {
       "id": "3",
       "content": "GET and POST are the most important methods of HTTP protocol",
-      "important": true
+      "important": false
     },
     {
-      "id": 4,
+      "id": "4",
       "content": "CSS is hard",
       "important": false
     },
     {
-      "id": 5,
+      "id": "5",
       "content": "Programming is difficult",
       "important": false
     },
     {
-      "id": 6,
+      "id": "6",
       "content": "Server programming is cool",
       "important": false
     },
     {
-      "id": 7,
+      "id": "7",
       "content": "Axios is awesome",
+      "important": false
+    },
+    {
+      "id": 8,
+      "content": "We extracted the noteForm component from the app",
       "important": false
     }
   ]

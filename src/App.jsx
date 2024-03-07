@@ -1,50 +1,11 @@
-import { useState, useEffect } from "react";
 import "./App.css";
-import Note from "./components/Note";
-import axios from "axios";
+import NoteBook from "./components/NoteBook";
 
-function App(props) {
-  const [notes, setNotes] = useState([]);
-  const [newNote, setNewNote] = useState("");
-
-  useEffect(() => {
-    axios.get("http://localhost:3001/notes").then((response) => {
-      setNotes(response.data);
-    });
-  }, []);
-
-  const addNote = (event) => {
-    event.preventDefault();
-
-    const noteObject = {
-      content: newNote,
-      important: false,
-      id: notes.length + 1,
-    };
-
-    axios.post("http://localhost:3001/notes", noteObject).then((response) => {
-      setNotes(notes.concat(response.data));
-      setNewNote("");
-    });
-  };
-
-  const handelNoteChange = (event) => {
-    setNewNote(event.target.value);
-  };
-
+function App() {
   return (
-    <>
-      <h1>Notes</h1>
-      <ul>
-        {notes.map((note) => (
-          <Note key={note.id} note={note} />
-        ))}
-      </ul>
-      <form onSubmit={addNote}>
-        <input type="text" value={newNote} onChange={handelNoteChange} />
-        <button type="submit">Save</button>
-      </form>
-    </>
+    <div>
+      <NoteBook />
+    </div>
   );
 }
 
